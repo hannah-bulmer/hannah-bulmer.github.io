@@ -40,7 +40,7 @@ self.__precacheManifest = [
     "url": "/static/media/wave.ae0b6a80.gif"
   },
   {
-    "revision": "55281db4471ee938489d2feffeed6147",
+    "revision": "4c2aa379669385f999da124a75cc29e4",
     "url": "/index.html"
   }
 ];
