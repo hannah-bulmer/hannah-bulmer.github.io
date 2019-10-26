@@ -22,34 +22,22 @@ class AboutMe extends React.Component {
     return Object.keys(checked).filter(val => checked[val]).length;
   }
 
-  renderOrderedList() {
-    const enjoy = "math, programming, travelling, being outdoors, filmmaking, playing Wii".split(',');
-    return "<ul>" + enjoy.map(item => "<li>" + item + ",</li>").join('') + "</ul>";
-  }
-
-  renderAboutMe() {
-    const aboutMe = [
-      "Hi! My name is Hannah Bulmer and I am an undergraduate student \
-      at the University of Waterloo, majoring in <b>computer science</b>. I enjoy "+ this.renderOrderedList(),
-
-      "I first became interested in coding after reading \
-      <a href='https://simonsingh.net/books/the-code-book/the-book/' target='_blank'> \
-      The Code Book</a> by Simon Singh around the age of 10. I sunk a lot of time into trying to solve \
-      the puzzles he left for codebreakers to try their hands at, and through \
-      this I discovered the magical world of computer algorithms.",
-      
-      "From there I became a regular user on ProjectEuler and started taking programming classes in highschool. Since then, I have developed programs in Java, C++, and React. \
-      I have also dabbled in 3D animation and UI/UX design.",
-    ];
-    return aboutMe.map(section => <div><div dangerouslySetInnerHTML={{__html: section}} /><br /></div>)
-  }
-
   render() {
     return (
       <div className="page subpage">
             <div className="leftCol about" style={{"background-color": "white"}}>
             <h1>About me</h1>
-              {this.renderAboutMe()}
+              <div>
+                Hi! My name is Hannah Bulmer and I am an undergraduate student
+                at the University of Waterloo, majoring in <b>computer science</b>. I enjoy <br /><br />
+                <ul>
+                  <li>programming,</li>
+                  <li>travelling,</li>
+                  <li>being outdoors,</li>
+                  <li>filmmaking,</li>
+                  <li>playing Wii,</li>
+                </ul>
+              </div>
             </div>
             <div className="rightCol background">
               <h3>Tiny Life BucketList</h3>
