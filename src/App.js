@@ -20,7 +20,7 @@ class App extends Component {
 
   renderBirds() {
     return (
-      <div>
+      <div className="parent">
         <div class="bird-container bird-container--one">
           <div class="bird bird--one"></div>
         </div>
@@ -43,16 +43,22 @@ class App extends Component {
     return (
       <div>
         <div className="App" id="home">
-          <div className="title">Hannah Bulmer
-          <h4>Nature lover • Coffee enthusiast</h4>
+          <div>
+            <div className="title">Hannah Bulmer</div>
+          <h4>Nature lover • Coffee enthusiast • Student at UW</h4>
             {this.renderBirds()}
           </div>
           <div className="vertical">
             {this.renderLinks()}
           </div>
-          <div className="navigation">
+        </div>
+        <div className="navigation">
             <a href="#home">Home</a>
-          </div>
+            <a href="#about">About</a>
+        </div>
+
+        <div id="about">
+            Hello this is the about me section
         </div>
       </div>
     );
