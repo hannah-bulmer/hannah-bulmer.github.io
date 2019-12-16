@@ -1,0 +1,41 @@
+$margin: 15px;
+
+#experience::before {
+  content: "";
+  position: absolute;
+  bottom: -100vh;
+  border-bottom: 30px solid rgb(249, 222, 163);
+  border-left: 100vw solid transparent;
+}
+
+#experience {
+  height: 100vh;
+  background-color: rgb(249, 222, 163);
+
+  .container {
+    border: 1px solid gold;
+    width: 33vw;
+    position: relative;
+    top: $margin;
+    background: white;
+    border-radius: 10px;
+  }
+}
+
+.left {
+  float: left;
+  left: $margin;
+}
+
+.right {
+  float: right;
+  right: $margin;
+}
+
+@media only screen and (min-width: 500px) and (max-width: 800px) {
+
+}
+
+
+@media only screen and (max-width: 500px) {
+}
