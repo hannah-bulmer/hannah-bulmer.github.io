@@ -2,8 +2,8 @@ $margin: 15px;
 
 #experience::before {
   content: "";
-  position: absolute;
-  bottom: -100vh;
+  position: relative;
+  top: -50px;
   border-bottom: 30px solid rgb(249, 222, 163);
   border-left: 100vw solid transparent;
 }
@@ -38,4 +38,5 @@ $margin: 15px;
 
 
 @media only screen and (max-width: 500px) {
+
 }
