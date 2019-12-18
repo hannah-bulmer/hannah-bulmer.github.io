@@ -70,7 +70,13 @@ class App extends Component {
         </div>
 
         <div id="experience">
-          {/* <ExperienceCard /> */}
+          Under construction - check back soon!
+          <div className="list">
+            <ExperienceCard />
+            <ExperienceCard />
+            <ExperienceCard />
+            <ExperienceCard />
+          </div>
         </div>
       </div>
     );

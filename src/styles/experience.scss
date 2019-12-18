@@ -1,36 +1,47 @@
 $margin: 15px;
+$background-color: rgb(249, 222, 163);
 
 #experience::before {
-  content: "";
-  position: relative;
-  top: -50px;
-  border-bottom: 30px solid rgb(249, 222, 163);
-  border-left: 100vw solid transparent;
+  // content: "";
+  // top: -10vh;
+  // position: relative;
+  // width: fit-content;
+  // margin-bottom: 100px;
+  // border-bottom: 40px solid $background-color;
+  // border-left: 100vw solid transparent;
 }
 
 #experience {
   height: 100vh;
-  background-color: rgb(249, 222, 163);
+  max-height: fit-content;
+  position: relative;
+  background-color: $background-color;
+}
 
-  .container {
-    border: 1px solid gold;
-    width: 33vw;
-    position: relative;
-    top: $margin;
-    background: white;
-    border-radius: 10px;
+.list {
+  background-color: $background-color;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding-top: 100px;
+}
+
+.box {
+  display: flex;
+  flex-direction: column;
+  height: 130vh;
+  img {
+    max-height: 250px;
+  }
+  .location {
+
+  }
+  .details {
+    
   }
 }
 
-.left {
-  float: left;
-  left: $margin;
-}
-
-.right {
-  float: right;
-  right: $margin;
-}
 
 @media only screen and (min-width: 500px) and (max-width: 800px) {
 
