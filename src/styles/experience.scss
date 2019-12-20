@@ -1,18 +1,10 @@
 $margin: 15px;
 $background-color: rgb(249, 222, 163);
 
-#experience::before {
-  // content: "";
-  // top: -10vh;
-  // position: relative;
-  // width: fit-content;
-  // margin-bottom: 100px;
-  // border-bottom: 40px solid $background-color;
-  // border-left: 100vw solid transparent;
-}
 
 #experience {
   height: 100vh;
+  max-width: 100%;
   max-height: fit-content;
   position: relative;
   background-color: $background-color;
@@ -25,14 +17,15 @@ $background-color: rgb(249, 222, 163);
   flex-wrap: wrap;
   justify-content: space-around;
   padding-top: 100px;
+  max-width: 100%;
 }
 
 .box {
   display: flex;
   flex-direction: column;
-  height: 130vh;
+  background-color: white;
   img {
-    max-height: 250px;
+    max-height: 10em;
   }
   .location {
 

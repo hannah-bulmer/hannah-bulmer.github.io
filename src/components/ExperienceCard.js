@@ -2,14 +2,15 @@ import React from 'react';
 
 class ExperienceCard extends React.Component {
   render() {
+    const { logo, location, details } = this.props;
     return(
       <div className="box">
-        <img src={require('../static/campfire.gif')} alt="company logo" />
+        <img src={require(`../static/${logo}.svg`)} alt="company logo" />
         <div className="location">
-          University
+          {location}
         </div>
         <div className="details">
-          Explanation
+          {details}
         </div>
       </div>
     )

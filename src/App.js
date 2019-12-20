@@ -72,10 +72,10 @@ class App extends Component {
         <div id="experience">
           Under construction - check back soon!
           <div className="list">
-            <ExperienceCard />
-            <ExperienceCard />
-            <ExperienceCard />
-            <ExperienceCard />
+            {/* <ExperienceCard location="Elastic.io" logo="github" details="I did x and y and z blah"/>
+            <ExperienceCard location="Elastic.io" logo="github" details="I did x and y and z blah"/>
+            <ExperienceCard location="Elastic.io" logo="github" details="I did x and y and z blah"/> */}
+
           </div>
         </div>
       </div>
