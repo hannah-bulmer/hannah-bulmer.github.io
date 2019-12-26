@@ -3,6 +3,7 @@ import './App.scss';
 import 'bootstrap/dist/css/bootstrap.css';
 import WebsiteLink from './components/WebsiteLink';
 import ExperienceCard from './components/ExperienceCard';
+import data from './data.json';
 
 const links = [
   { link: 'https://www.linkedin.com/in/hannah-bulmer-099030154/', image: require('./static/linkedin.png') },
@@ -14,6 +15,15 @@ class App extends Component {
   renderLinks() {
     return (
       links.map(link => <WebsiteLink link={link.link} image={link.image} />)
+    )
+  }
+
+  renderExperiences() {
+    console.log(data);
+    const { experience } = data;
+    return (
+      Object.keys(experience).map((exp) => <ExperienceCard location={experience[exp].name} dates={experience[exp].dates} logo="github" details={experience[exp].details} />
+      )
     )
   }
 
@@ -70,12 +80,9 @@ class App extends Component {
         </div>
 
         <div id="experience">
-          Under construction - check back soon!
+          <h3>Experience - CURRENTLY WIP</h3>
           <div className="list">
-            {/* <ExperienceCard location="Elastic.io" logo="github" details="I did x and y and z blah"/>
-            <ExperienceCard location="Elastic.io" logo="github" details="I did x and y and z blah"/>
-            <ExperienceCard location="Elastic.io" logo="github" details="I did x and y and z blah"/> */}
-
+            {this.renderExperiences()}
           </div>
         </div>
       </div>
