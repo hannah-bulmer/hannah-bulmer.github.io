@@ -11,7 +11,7 @@ const particlesOptions = {
           }
         },
         color: {
-          value: "#FFF"
+          value: "#000000"
         },
         opacity: {
           value: 0.4008530152163807,
@@ -36,7 +36,7 @@ const particlesOptions = {
         line_linked: {
           enable: true,
           distance: 100,
-          color: "#0000F0",
+          color: "#000000",
           opacity: 0.5,
           width: 0.5
         },

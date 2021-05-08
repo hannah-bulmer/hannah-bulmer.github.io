@@ -1,88 +1,58 @@
 import React, { Component } from 'react';
+import ParticleComponent from "./ParticleComponent";
+import '../node_modules/react-linechart/dist/styles.css';
 import './App.scss';
 import 'bootstrap/dist/css/bootstrap.css';
-import WebsiteLink from './components/WebsiteLink';
-import ExperienceCard from './components/ExperienceCard';
-import data from './data.json';
-
-const links = [
-  { link: 'https://www.linkedin.com/in/hannah-bulmer-099030154/', image: require('./static/linkedin.png') },
-  { link: 'https://github.com/hannah-bulmer', image: require('./static/github.svg') },
-  { link: 'https://drive.google.com/file/d/1Sk6aq4FoDJpWHWhIIdHPYcvIorGKTY0c/view', image: require('./static/resume.png') },
-]
+import FrontPage from './components/FrontPage';
+import AboutMe from './components/AboutMe';
+import Experience from './components/Experience';
 
 class App extends Component {
-  renderLinks() {
-    return (
-      links.map(link => <WebsiteLink link={link.link} image={link.image} />)
-    )
+  constructor (props) {
+    super(props);
+    this.myAbout = React.createRef();
+    this.myProjects = React.createRef();
+    this.myExperience = React.createRef();
   }
 
-  renderExperiences() {
-    console.log(data);
-    const { experience } = data;
-    return (
-      Object.keys(experience).map((exp) => <ExperienceCard location={experience[exp].name} dates={experience[exp].dates} logo="github" details={experience[exp].details} />
-      )
-    )
-  }
-
-  renderBirds() {
-    return (
-      <div className="parent">
-        <div class="bird-container bird-container--one">
-          <div class="bird bird--one"></div>
-        </div>
-        <div class="bird-container bird-container--two">
-          <div class="bird bird--two"></div>
-        </div>
-
-        <div class="bird-container bird-container--three">
-          <div class="bird bird--three"></div>
-        </div>
-
-        <div class="bird-container bird-container--four">
-          <div class="bird bird--four"></div>
-        </div>
-      </div>
-    );
-  }
+  scrollToAbout = () => window.scrollTo(0, this.myAbout.current.offsetTop)
+  scrollToProjects = () => window.scrollTo(0, this.myProjects.current.offsetTop)
+  scrollToExperiences = () => window.scrollTo(0, this.myExperience.current.offsetTop)
 
   render() {
+  const links = [
+    { link: 'https://www.linkedin.com/in/hannah-bulmer-099030154/', image: require('./static/linkedin.png')},
+    { link: 'https://github.com/hannah-bulmer', image: require('./static/github.svg')}
+  ]
+
+  const sprites = {
+    campfire: require('./static/campfire.gif'),
+    earth: require('./static/earth.gif'),
+    sail: require('./static/sailboat.gif'),
+    drive: require('./static/drive.gif'),
+    wave: require('./static/wave.gif'),
+  };
+  
     return (
       <div>
-        <div className="App" id="home">
-          <div>
-            <div className="title">Hannah Bulmer</div>
-          <h4>Nature loving  🏕  Coffee enthusiast  ☕️  Developer 💻</h4>
-            {this.renderBirds()}
+        <div className="App">
+          <div className="particles background">
+          <FrontPage
+            links={links}
+            scrollToAbout={this.scrollToAbout}
+            scrollToProjects={this.scrollToProjects}
+            scrollToExperiences={this.scrollToExperiences}
+          />
+          <div ref={this.myAbout}>
+            <AboutMe sprites={sprites} />
           </div>
-          <div className="vertical">
-            {this.renderLinks()}
+          <div ref={this.myProjects} className="page subpage">
+            <h1>Projects</h1>
           </div>
-        </div>
-        <div className="navigation">
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#experience">Experience</a>
-        </div>
-
-        <div id="about">
-          <div className="container">
-            <div className="shadowBox"><img src={require('./static/hannah.jpg')} alt="Hannah" /></div>
-            <div className="rightCol">
-              <h3>Hi! I'm Hannah Bulmer.</h3>
-              <h5>
-                I'm a third year Computer Science student at the University of Waterloo.
-              </h5>
-            </div>
+          <div ref={this.myExperience} className="page subpage">
+            <Experience />
           </div>
-        </div>
-
-        <div id="experience">
-          <h3>Experience - CURRENTLY WIP</h3>
-          <div className="list">
-            {this.renderExperiences()}
+          <ParticleComponent />
           </div>
         </div>
       </div>
