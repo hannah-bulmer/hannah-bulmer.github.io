@@ -1,6 +1,5 @@
 import React from "react";
 import { Link, withRouter } from "react-router-dom";
-import { getActiveLink } from "react-scroll/modules/mixins/scroller";
 
 function Footer(props) {
     const { pathname } = props.location

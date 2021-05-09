@@ -5,14 +5,10 @@ function Projects() {
     <div className="contact">
       <div class="container">
         <div class="row align-items-center my-5">
-          <div class="col-lg-7">
-            <img
-              class="img-fluid rounded mb-4 mb-lg-0"
-              src="http://placehold.it/900x400"
-              alt=""
-            />
+          <div class="col-lg-5 mr-5 ml-5">
+            Pictures
           </div>
-          <div class="col-lg-5">
+          <div class="col-lg-5 ml-5">
             <h1 class="font-weight-light">Other Projects</h1>
             <p>
               Lorem Ipsum is simply dummy text of the printing and typesetting
